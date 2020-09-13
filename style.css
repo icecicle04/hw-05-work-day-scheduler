@@ -75,6 +75,11 @@ textarea {
 
 
 /*  */
+.container {
+  width: 100%;
+  position: relative;
+}
+
 .saveBtnImg {
   width: 40%;
   padding-top: 25px;
@@ -118,6 +123,7 @@ textarea {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  position: relative;
 }
 
 .hour {
