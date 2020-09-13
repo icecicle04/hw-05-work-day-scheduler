@@ -1,5 +1,4 @@
-console.log("helloworld");
-
+// current time variables
 var currentDay = moment().format("LL");
 var currentHour = moment().format("k");
 // console.log(currentHour);
@@ -70,18 +69,23 @@ if (currentHour > 17) {
 } else if (currentHour < 17) {
   $("fivePmText").addClass("future");
 }
-// id="nineAmText"
-// color present
 
-var nineAmNote = $("#onepm");
-var tenAmNote = "";
-var elevenAmNote = "";
-var twelvePmNote = "";
-var onePmNote = "";
-var twoPmNote = "";
-var threePmNote = "";
-var fourPmNote = "";
-var fivePmNote = "";
+var nineAmNote = $(".nineAm-Note");
+var tenAmNote = $(".tenAm-Note");
+var elevenAmNote = $(".elevenAm-Note");
+var twelvePmNote = $(".twelvePm-Note");
+var onePmNote = $(".onePm-Note");
+var twoPmNote = $(".twoPm-Note");
+var threePmNote = $(".threePm-Note");
+var fourPmNote = $(".fourPm-Note");
+var fivePmNote = $(".fivePm-Note");
+
+$(".nine-Am-Note").on("click").console.log("i've been clicked!");
+
+$("#nineAmText").on("click"),
+  function () {
+    var nineAmNote = jQuery("#nineAmText input[type=string]");
+  };
 
 $("#currentDay").append(currentDay);
 
