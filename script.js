@@ -80,12 +80,22 @@ var threePmNote = $(".threePm-Note");
 var fourPmNote = $(".fourPm-Note");
 var fivePmNote = $(".fivePm-Note");
 
-$(".nine-Am-Note").on("click").console.log("i've been clicked!");
+// vars to sense clicks
+// var nineAmNote = document.getElementById(".nineAm-Note");
+// nineAmNote.onclick = function () {
+//   append(button);
+// };
 
-$("#nineAmText").on("click"),
-  function () {
-    var nineAmNote = jQuery("#nineAmText input[type=string]");
-  };
+// $(document).ready(function () {
+//   var newNineText = "userInput";
+//   $("#.nineAm-Note").prop("value", newNineText);
+//   $("#nine-Am-Note").append(newNineText);
+// });
+
+// $(".nineAm-Note").on("click")console.log("ive been clicked dawg");
+//   function () {
+//     var nineAmNote = jQuery("#nineAmText input[type=string]");
+//   };
 
 $("#currentDay").append(currentDay);
 
