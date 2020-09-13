@@ -4,13 +4,46 @@ var currentDay = moment().format("LL");
 // console.log(currentHour);
 var currentHour = "12";
 
-var classColorArr = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+var classColorArr = [
+  "#9",
+  "#10",
+  "#11",
+  "#12",
+  "#13",
+  "#14",
+  "#15",
+  "#16",
+  "#17",
+];
 
 for (i = 0; i < classColorArr.length; i++) {
   if (currentHour < classColorArr[i]) {
-    $("currentHourText").addClass("past");
+    $(classColorArr[i]).addClass("past");
   }
 }
+
+$(document.body).ready(function () {
+  $("input").each(function (i) {
+    if (this.id < currentHour) {
+      $(this).addClass("past");
+    }
+    if (this.id == currentHour) {
+      $(this).addClass("present");
+    }
+    if (this.id > currentHour) {
+      $(this).addClass("future");
+    }
+  });
+});
+// $(document.body).ready(function () {
+//   $("input").each(function (i) {
+//     if (this.id < currentHour) {
+//       this.addClass("past");
+//     } else if (this.id == currentHour) {
+//         this.addClass("present");
+//         else if (this.id > currentHour){
+//             this.addClass("future"
+// }
 // IFs to format colors rows
 if (currentHour > 9) {
   $("#nineAmText").addClass("past");
