@@ -1,8 +1,16 @@
 // current time variables
 var currentDay = moment().format("LL");
-var currentHour = moment().format("k");
+// var currentHour = moment().format("k");
 // console.log(currentHour);
+var currentHour = "12";
 
+var classColorArr = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+
+for (i = 0; i < classColorArr.length; i++) {
+  if (currentHour < classColorArr[i]) {
+    $("currentHourText").addClass("past");
+  }
+}
 // IFs to format colors rows
 if (currentHour > 9) {
   $("#nineAmText").addClass("past");
@@ -69,6 +77,7 @@ if (currentHour > 17) {
 } else if (currentHour < 17) {
   $("fivePmText").addClass("future");
 }
+console.log(currentHour);
 
 var nineAmNote = $(".nineAm-Note");
 var tenAmNote = $(".tenAm-Note");
