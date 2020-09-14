@@ -5,6 +5,14 @@ var currentHourInt = parseInt(currentHour);
 // appends current day to header
 $("#currentDay").append(currentDay);
 
+$("#17saveButton").on("click", function () {
+  var fivePmNote = $("#17").val();
+  localStorage.setItem("fivePmNote", $("#17").val());
+  //   localStorage.setItem(inputEl.attr(".textarea"), inputEl.val());
+  console.log(fivePmNote);
+  // loads previous notes on refresh
+});
+
 // iterates through each input and assigns class based on INT current hour
 $(document.body).ready(function () {
   $("input").each(function (i) {
@@ -31,32 +39,4 @@ var threePmNote = $(".threePm-Note");
 var fourPmNote = $(".fourPm-Note");
 var fivePmNote = $(".fivePm-Note");
 
-// vars to sense clicks
-// var nineAmNote = document.getElementById(".nineAm-Note");
-// nineAmNote.onclick = function () {
-//   append(button);
-// };
-
-// $(document).ready(function () {
-//   var newNineText = "userInput";
-//   $("#.nineAm-Note").prop("value", newNineText);
-//   $("#nine-Am-Note").append(newNineText);
-// });
-
-// $(".nineAm-Note").on("click")console.log("ive been clicked dawg");
-//   function () {
-//     var nineAmNote = jQuery("#nineAmText input[type=string]");
-//   };
-
-// $(document).ready(function () {
-//   var currentHour = moment();
-//   var nineAm = "";
-//   var tenAM = "";
-//   var elevenAM = "";
-//   var twelvePM = "";
-//   var onePM = "";
-//   var twoPM = "";
-//   var threePM = "";
-//   var fourPM = "";
-//   var fivePM = "";
-// });
+// local storage function
