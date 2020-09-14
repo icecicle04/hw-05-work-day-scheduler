@@ -5,14 +5,6 @@ var currentHourInt = parseInt(currentHour);
 // appends current day to header
 $("#currentDay").append(currentDay);
 
-$("#17saveButton").on("click", function () {
-  var fivePmNote = $("#17").val();
-  localStorage.setItem("fivePmNote", $("#17").val());
-  //   localStorage.setItem(inputEl.attr(".textarea"), inputEl.val());
-  console.log(fivePmNote);
-  // loads previous notes on refresh
-});
-
 // iterates through each input and assigns class based on INT current hour
 $(document.body).ready(function () {
   $("input").each(function (i) {
@@ -25,6 +17,17 @@ $(document.body).ready(function () {
     if (this.id == currentHourInt) {
       $(this).addClass("present");
     }
+  });
+  // gets text from textarea and puts it in local storage
+  $(".saveBtn").on("click", function () {
+    var noteStored = $(this).siblings(".textarea").val();
+    var fivePmStored = $(this).attr("dataStore");
+    localStorage.setItem(fivePmStored, noteStored);
+    // retreives text from local storage
+    // localStorage.getItem(fivePmNote);
+    $("#fivePmText").text(localStorage.getItem(fivePmStored));
+    console.log(JSON.stringify(localStorage));
+    // loads previous notes on refresh
   });
 });
 
