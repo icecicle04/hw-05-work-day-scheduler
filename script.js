@@ -2,22 +2,10 @@
 var currentDay = moment().format("LL");
 var currentHour = moment().format("k");
 var currentHourInt = parseInt(currentHour);
-// console.log(currentHour);
-// var currentHour = 22;
-// $.type(currentHour) === "number";
-// $.type("input") === "number";
-// var classColorArr = [
-//   "#9",
-//   "#10",
-//   "#11",
-//   "#12",
-//   "#13",
-//   "#14",
-//   "#15",
-//   "#16",
-//   "#17",
-// ];
+// appends current day to header
+$("#currentDay").append(currentDay);
 
+// iterates through each input and assigns class based on INT current hour
 $(document.body).ready(function () {
   $("input").each(function (i) {
     if (this.id < currentHourInt) {
@@ -32,8 +20,7 @@ $(document.body).ready(function () {
   });
 });
 
-console.log(currentHour);
-
+// vars to write and save notes in local storage
 var nineAmNote = $(".nineAm-Note");
 var tenAmNote = $(".tenAm-Note");
 var elevenAmNote = $(".elevenAm-Note");
@@ -60,8 +47,6 @@ var fivePmNote = $(".fivePm-Note");
 //   function () {
 //     var nineAmNote = jQuery("#nineAmText input[type=string]");
 //   };
-
-$("#currentDay").append(currentDay);
 
 // $(document).ready(function () {
 //   var currentHour = moment();
